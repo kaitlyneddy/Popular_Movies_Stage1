@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Popular_Movies_Stage1</string>
+    <string name="image_poster">Image Poster</string>
+    <string name="title">Title</string>
+    <string name="plot_synopsis">Plot Synopsis</string>
+    <string name="user_rating">User Rating</string>
+    <string name="release_date">Release Date</string>
+    <string name="popularity">popularity</string>
+    <string name="highest_rated">highest_rated</string>
+</resources>
+
