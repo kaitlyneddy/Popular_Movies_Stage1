@@ -11,7 +11,7 @@ import java.util.Scanner;
 
     class MovieUrlUtils {
 
-       // private static final String API_KEY = //
+       // private static final String API_KEY = ;
         private static final String LOG_TAG = MovieUrlUtils.class.getSimpleName();
         private static final String MOVIE_QUERY_API = "api_key";
         private static final String MOVIE_BASE_URL = "https://api.themoviedb.org/3/movie/";
@@ -22,7 +22,7 @@ import java.util.Scanner;
             Uri uri = Uri.parse(MOVIE_BASE_URL)
                     .buildUpon()
                     .appendPath(movieUrl)
-                 //   .appendQueryParameter(MOVIE_QUERY_API, API_KEY)
+                  //  .appendQueryParameter(MOVIE_QUERY_API, API_KEY)
                     .build();
             URL url = null;
             try {

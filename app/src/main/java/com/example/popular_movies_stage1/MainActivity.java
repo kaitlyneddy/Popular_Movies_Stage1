@@ -1,6 +1,6 @@
 package com.example.popular_movies_stage1;
 
-import android.annotation.SuppressLint;
+
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -28,16 +28,17 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
     private static final String CALLBACK_NAMESORT= "callbackNamesort";
     private String queryMovie = "popular";
     private String nameSort = "Popular Movies";
-    private Movie[] mMovie = null;
+    private Movie[] mMovie;
     private RecyclerView mRecyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mRecyclerView = findViewById(R.id.rv_main);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        mRecyclerView.setHasFixedSize(true);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_main );
+        mRecyclerView = findViewById( R.id.rv_main );
+        mRecyclerView.setLayoutManager( new GridLayoutManager( this, 2 ) );
+        mRecyclerView.setHasFixedSize( true );
 
         setTitle(nameSort);
         if (isOnline()) {
@@ -107,8 +108,6 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
         outState.putString(CALLBACK_NAMESORT, nameSortSaved);
 
     }
-
-    @SuppressLint("StaticFieldLeak")
     private class MovieFetchTask extends AsyncTask<String, Void, Movie[]> {
 
         @Override
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
                 mRecyclerView.setAdapter(movieAdapter);
 
             } else {
-                Log.e(LOG_TAG, "Problems with adapter");
+                Log.e(LOG_TAG, "You're stupid");
             }
         }
 

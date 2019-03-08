@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
+import static com.squareup.picasso.Picasso.with;
+
 public class DetailActivity extends AppCompatActivity {
 
     private static final String URL_IMAGE_PATH = "http://image.tmdb.org/t/p/w185";
@@ -42,11 +44,7 @@ public class DetailActivity extends AppCompatActivity {
         tv_rating.setText(rating.concat("/10"));
         tv_release.setText(releaseFinal);
         setTitle(title);
-
-    }
-
-
-}
+    }}
 
 
 
