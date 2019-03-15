@@ -75,10 +75,28 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (isOnline()) return false;
-        return false;
+        int itemClicked = item.getItemId();
+        if (itemClicked == R.id.action_popular){
+            //sort by popularity.desc
+            queryTheMovieDatabase(R.id.action_popular);
+            return true;
 
+        }else if (itemClicked == R.id.action_highest_rated){
+            //use sort by vote_average.desc
+            queryTheMovieDatabase(R.id.action_popular);
+            return true;
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
+
+    public void queryTheMovieDatabase(int sortType){
+
+        URL dataUrl = MovieUrlUtils.buildUrlMENU(sortType);
+        new MovieFetchTask().execute();
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -123,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
                 return null;
             }
             URL movieUrl = MovieUrlUtils.buildUrl(strings[0]);
-
             String movieResponse;
             try {
                 movieResponse = MovieUrlUtils.getResponseFromHttp(movieUrl);
@@ -148,7 +165,6 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
                 Log.e(LOG_TAG, "You're stupid");
             }
         }
-
     }
 
 }
